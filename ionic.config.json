@@ -1,0 +1,7 @@
+{
+  "name": "new-welquer-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}
