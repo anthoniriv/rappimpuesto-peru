@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   IonContent,
   IonHeader,
@@ -16,31 +16,31 @@ import Top2 from "../assets/png/top2.png";
 import { colorFill } from "ionicons/icons";
 
 const CalcRentabilidad: React.FC = () => {
-  const handleVentaChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    // Get the value from the input
-    const ventaValue = event.target.value;
-    // Do something with the value
-    console.log("Venta value:", ventaValue);
-  };
+  const [ventaValue, setVentaValue] = useState<any>("");
+  const [igvValue, setIgvValue] = useState<any>("");
+  const [totalValue, setTotalValue] = useState<any>("");
 
-  const handleIgvChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    // Get the value from the input
-    const igvValue = event.target.value;
-    // Do something with the value
-    console.log("IGV value:", igvValue);
-  };
+  function handleVentaChange(event: any) {
+    setVentaValue(event.target.value);
+    console.log("Venta value:", event.target.value);
+  }
 
-  const handleTotalChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    // Get the value from the input
-    const totalValue = event.target.value;
-    // Do something with the value
-    console.log("Total value:", totalValue);
-  };
+  function handleIgvChange(event: any) {
+    setIgvValue(event.target.value);
+    console.log("IGV value:", event.target.value);
+  }
 
-  const reset = () => {
-    // Implement the reset logic here
+  function handleTotalChange(event: any) {
+    setTotalValue(event.target.value);
+    console.log("Total value:", event.target.value);
+  }
+
+  function reset() {
+    setVentaValue("");
+    setIgvValue("");
+    setTotalValue("");
     console.log("Reset button clicked");
-  };
+  }
 
   return (
     <IonPage>
@@ -59,20 +59,22 @@ const CalcRentabilidad: React.FC = () => {
               id="input-venta"
               fill="outline"
               placeholder="00.00"
-              onChange={handleVentaChange}
+              value={ventaValue}
+              onIonChange={handleVentaChange}
             ></IonInput>
           </IonItem>
           <h2 className="labels">Porcentaje que quiero ganar</h2>
           <IonItem className="inputs" lines="none">
             <IonLabel position="end" class="solesLabel">
-              S/
+              %
             </IonLabel>
             <IonInput
               inputmode="numeric"
               id="input-igv"
               fill="outline"
-              placeholder="00.00"
-              onChange={handleIgvChange}
+              placeholder="0"
+              value={igvValue}
+              onIonChange={handleIgvChange}
             ></IonInput>
           </IonItem>
           <h2 className="labels">Ganancia</h2>
@@ -85,15 +87,12 @@ const CalcRentabilidad: React.FC = () => {
               id="input-total"
               fill="outline"
               placeholder="00.00"
-              onChange={handleTotalChange}
+              value={totalValue}
+              onIonChange={handleTotalChange}
             ></IonInput>
           </IonItem>
         </div>
-        <IonButton
-          className="buttonReiniciar"
-          expand="block"
-          onClick={() => reset()}
-        >
+        <IonButton className="buttonReiniciar" expand="block" onClick={reset}>
           Reiniciar
         </IonButton>
       </IonContent>
