@@ -1,43 +1,62 @@
 import React, { useState } from "react";
 import {
   IonContent,
-  IonHeader,
   IonPage,
-  IonTitle,
-  IonToolbar,
   IonInput,
   IonButton,
   IonItem,
   IonLabel,
-  IonIcon,
 } from "@ionic/react";
 import "./CalcRentabilidad.css";
 import Top2 from "../assets/png/top2.png";
 
 const CalcRentabilidad: React.FC = () => {
-  const [ventaValue, setVentaValue] = useState<any>("");
-  const [igvValue, setIgvValue] = useState<any>("");
-  const [totalValue, setTotalValue] = useState<any>("");
+  const [costoValue, setCostoValue] = useState<any>("");
+  const [porcentajeGanarValue, setPorcentajeGanarValue] = useState<any>("");
+  const [gananciaValue, setGananciaValue] = useState<any>("");
 
-  function handleVentaChange(event: any) {
-    setVentaValue(event.target.value);
-    console.log("Venta value:", event.target.value);
+  function handleCostoValue(value: string) {
+    setCostoValue(value);
+    handleGananciaValue(value, porcentajeGanarValue);
+    console.log("Venta value:", value);
   }
 
-  function handleIgvChange(event: any) {
-    setIgvValue(event.target.value);
-    console.log("IGV value:", event.target.value);
+  function handlePorcentajeGanarValue(value: string) {
+    setPorcentajeGanarValue(value);
+    handleGananciaValue(costoValue, value);
+    console.log("IGV value:", value);
   }
 
-  function handleTotalChange(event: any) {
-    setTotalValue(event.target.value);
-    console.log("Total value:", event.target.value);
+  function handleGananciaValue(costo: string, porcentajeGanar: string) {
+    const costoFloat = parseFloat(costo);
+    const porcentajeGanarFloat = parseFloat(porcentajeGanar);
+
+    if (
+      costo !== "" &&
+      !isNaN(costoFloat) &&
+      porcentajeGanar !== "" &&
+      !isNaN(porcentajeGanarFloat)
+    ) {
+      console.log("Costo:", costoFloat);
+      console.log("Porcentaje de ganancia:", porcentajeGanarFloat);
+      let porcentaje = porcentajeGanarFloat / 100;
+      console.log("Porcentaje:", porcentaje);
+      let division = 1 - porcentaje;
+      console.log("Division:", division);
+      const ganancia = costoFloat / division;
+      console.log("ganancia value:", ganancia);
+      setGananciaValue(ganancia.toFixed(2));
+      console.log("Total value:", ganancia.toFixed(2));
+    } else {
+      setGananciaValue("");
+      console.log("Costo y porcentaje de ganancia deben ser números válidos.");
+    }
   }
 
   function reset() {
-    setVentaValue("");
-    setIgvValue("");
-    setTotalValue("");
+    setCostoValue("");
+    setPorcentajeGanarValue("");
+    setGananciaValue("");
     console.log("Reset button clicked");
   }
 
@@ -58,8 +77,8 @@ const CalcRentabilidad: React.FC = () => {
               id="input-venta"
               fill="outline"
               placeholder="00.00"
-              value={ventaValue}
-              onIonChange={handleVentaChange}
+              value={costoValue}
+              onInput={(e: any) => handleCostoValue(e.target.value)}
             ></IonInput>
           </IonItem>
           <h2 className="labels">Porcentaje que quiero ganar</h2>
@@ -72,8 +91,8 @@ const CalcRentabilidad: React.FC = () => {
               id="input-igv"
               fill="outline"
               placeholder="0"
-              value={igvValue}
-              onIonChange={handleIgvChange}
+              value={porcentajeGanarValue}
+              onInput={(e: any) => handlePorcentajeGanarValue(e.target.value)}
             ></IonInput>
           </IonItem>
           <h2 className="labels">Ganancia</h2>
@@ -86,8 +105,8 @@ const CalcRentabilidad: React.FC = () => {
               id="input-total"
               fill="outline"
               placeholder="00.00"
-              value={totalValue}
-              onIonChange={handleTotalChange}
+              value={gananciaValue}
+              readonly={true}
             ></IonInput>
           </IonItem>
         </div>
