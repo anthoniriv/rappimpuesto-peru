@@ -1,0 +1,160 @@
+.top1 {
+  background: #e4ecf7;
+}
+
+ion-content {
+  --ion-background-color: #e4ecf7;
+}
+
+ion-content .title {
+  padding-top: 105px;
+  color: #fff;
+  text-align: center;
+  padding-bottom: 230px;
+  font-size: 28px;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+}
+
+ion-content .sub_title {
+  padding-top: 30px;
+  color: #03335e;
+  text-align: center;
+  font-size: 19px;
+  font-weight: 500;
+  font-family: 'Montserrat', sans-serif;
+}
+
+ion-content .selections {
+  width: 100%;
+  padding-top: 10%;
+  padding-bottom: 50px;
+}
+
+ion-content .selections .categoria {
+  display: flex;
+  flex-direction: row;
+  width: 70%;
+  margin: 0 auto;
+  align-self: center;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+}
+
+ion-content .selections .categoria ion-text {
+  color: #03335e;
+}
+
+ion-content .selections .categoria ion-text h3 {
+  margin: 0;
+  padding: 0;
+  font-size: 15px;
+  font-weight: 1000;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+}
+
+ion-content .selections .categoria2 {
+  padding-left: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  justify-content: space-evenly;
+}
+
+ion-content .selections .categoria2 ion-text {
+  color: #203680;
+}
+
+ion-content .selections .categoria2 ion-text h3 {
+  margin: 0;
+  padding: 0;
+  font-size: 15px;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+}
+
+ion-content .calculadoras-1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+ion-content .calculadoras-1 .calculadora-unica,
+ion-content .calculadoras-1 .calculadora-anual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 40%;
+  height: 100%;
+  padding-top: 20px;
+  background: linear-gradient(45deg, #09529F, #4ABBD6);
+  box-shadow: 0px 5px 6px rgba(0, 0, 0, 0.281);
+  border-radius: 25px;
+}
+
+ion-content .calculadoras-1 .calculadora-unica ion-icon,
+ion-content .calculadoras-1 .calculadora-anual ion-icon {
+  color: white;
+  width: 50px;
+  height: 50px;
+}
+
+ion-content .calculadoras-1 .calculadora-unica ion-text,
+ion-content .calculadoras-1 .calculadora-anual ion-text {
+  h3 {
+    font-size: 15px;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    color: white;
+    text-align: center;
+  }
+}
+
+ion-content .calculadoras-2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 20px;
+}
+
+ion-content .calculadoras-2 .calculadora-unica,
+ion-content .calculadoras-2 .calculadora-anual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 40%;
+  height: 100%;
+  padding-top: 20px;
+  background: linear-gradient(45deg, #09529F, #4ABBD6);
+  box-shadow: 0px 5px 6px rgba(0, 0, 0, 0.281);
+  border-radius: 25px;
+}
+
+ion-content .calculadoras-2 .calculadora-unica ion-icon,
+ion-content .calculadoras-2 .calculadora-anual ion-icon {
+  color: white;
+  width: 50px;
+  height: 50px;
+}
+
+ion-content .calculadoras-2 .calculadora-unica ion-text,
+ion-content .calculadoras-2 .calculadora-anual ion-text {
+  h3 {
+    font-size: 15px;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    color: white;
+    text-align: center;
+  }
+}

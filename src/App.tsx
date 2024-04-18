@@ -40,6 +40,7 @@ import "@ionic/react/css/display.css";
 
 /* Theme variables */
 import "./theme/variables.css";
+import CalcRentabilidad from "./pages/CalcRentabilidad";
 
 setupIonicReact();
 
@@ -48,8 +49,11 @@ const App: React.FC = () => (
     <IonReactRouter>
       <IonTabs>
         <IonRouterOutlet>
-          <Route exact path="/tab1">
+          <Route exact path="/calculadoras">
             <Tab1 />
+          </Route>
+          <Route path="/calculadoras/calc-rentabilidad/">
+            <CalcRentabilidad />
           </Route>
           <Route exact path="/tab2">
             <Tab2 />
@@ -65,7 +69,7 @@ const App: React.FC = () => (
           </Route>
         </IonRouterOutlet>
         <IonTabBar slot="bottom">
-          <IonTabButton tab="tab1" href="/tab1">
+          <IonTabButton tab="tab1" href="/calculadoras">
             <IonIcon aria-hidden="true" icon={calculator} />
             <IonLabel>Calculadoras</IonLabel>
           </IonTabButton>

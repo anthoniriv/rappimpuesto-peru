@@ -34,10 +34,10 @@ const Tab3: React.FC = () => {
 
   return (
     <IonPage>
-      <div className="top3">
-        <img src={Top3} alt="" />
-      </div>
-      <IonContent class="contenido">
+      <IonContent fullscreen class="contenido">
+        <div className="top3">
+          <img src={Top3} alt="" />
+        </div>
         <IonSearchbar
           animated={true}
           color="light"
