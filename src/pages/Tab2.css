@@ -1,19 +1,19 @@
 .main {
-    --background: url('../../resources/1.png') 0 0/100% 95% no-repeat;
+    --background: url('../../resources/1.png') 0 0/100% 95% no-repeat !important;
     background-size: cover;
     padding-top: var(--padding-top);
   }
-  
+
   .content {
     padding-left: 30px;
     margin-top: 50px;
-    
+
     h2 {
       font-size: 34px;
       font-weight: 400;
       color: rgba(255, 255, 255, 0);
     }
-    
+
     h1 {
       margin-top: 29px;
       max-width: 82%;
@@ -22,14 +22,14 @@
       color: #41d1d900;
       font-family: 'Montserrat', sans-serif;
     }
-    
+
     .divisor {
       margin-top: 50%;
       width: 50px;
       height: 5px;
       background: #3fd2da;
     }
-    
+
     p {
       margin-top: 100px;
       max-width: 50%;
@@ -38,7 +38,7 @@
       color: rgb(255, 255, 255);
       font-family: 'Montserrat', sans-serif;
     }
-    
+
     ion-button {
       margin-top: 10px;
       font-size: 16px;
@@ -48,7 +48,7 @@
       --background: #fff;
       --border-radius: 13px;
     }
-  
+
     .info {
       color: #238cb5;
       line-height: 16px;
@@ -59,4 +59,3 @@
       font-family: 'Montserrat', sans-serif;
     }
   }
-  

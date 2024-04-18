@@ -12,19 +12,20 @@ import {
   IonIcon,
 } from "@ionic/react";
 import "./Tab3.css";
-
+import "@ionic/react/css/palettes/high-contrast.always.css";
 import Top3 from "../assets/png/top3.png";
 
 const Tab3: React.FC = () => {
-  let cronograma: any;
+  let rucValue: any;
   let rucsSaved: any = [];
   let listRucs: any = [];
   let unicoRuc: any = [];
 
-  function generaraCronograma(cronogramaInput: any) {
-    console.log("ESTE ES EL VALOR QUE SE ENVIA", cronogramaInput);
-    cronograma = "";
-    //this.router.navigate(["/cronograma", cronogramaInput]);
+  function generaraCronograma(ev: any) {
+    const target = ev.target as unknown as HTMLIonSearchbarElement;
+    if (target) rucValue = target.value!.toLowerCase();
+    console.log("ESTE ES EL VALOR QUE SE ENVIA", rucValue);
+    window.location.href = `/cronograma/cronodetail/${rucValue}`;
   }
 
   function removeItem(index: any): void {
@@ -33,21 +34,21 @@ const Tab3: React.FC = () => {
 
   return (
     <IonPage>
-      <div className="top3">
-        <img src={Top3} alt="" />
-      </div>
-      <IonContent class="contenido">
+      <IonContent fullscreen class="contenido">
+        <div className="top3">
+          <img src={Top3} alt="" />
+        </div>
         <IonSearchbar
+          animated={true}
           color="light"
           style={{ width: "80%", margin: "auto", color: "#203680" }}
           type="tel"
           maxlength={11}
           inputMode="numeric"
           placeholder="Introduce tu N° de RUC"
-          value={cronograma}
           onKeyUp={(event) => {
             if (event.key === "Enter") {
-              generaraCronograma(cronograma);
+              generaraCronograma(event);
             }
           }}
         ></IonSearchbar>
@@ -82,5 +83,3 @@ const Tab3: React.FC = () => {
 };
 
 export default Tab3;
-
-
