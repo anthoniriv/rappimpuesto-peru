@@ -13,7 +13,6 @@ import {
 } from "@ionic/react";
 import "./CalcRentabilidad.css";
 import Top2 from "../assets/png/top2.png";
-import { colorFill } from "ionicons/icons";
 
 const CalcRentabilidad: React.FC = () => {
   const [ventaValue, setVentaValue] = useState<any>("");

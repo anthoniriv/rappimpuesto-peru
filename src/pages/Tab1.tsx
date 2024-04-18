@@ -100,7 +100,7 @@ const Tab1: React.FC = () => {
               </IonItem>
             )}
             {!tipotercera && (
-              <IonItem className="calculadora-anual" routerLink="calc-precio">
+              <IonItem className="calculadora-anual" routerLink="/calculadoras/calc-precio/">
                 <IonIcon icon={calculator}></IonIcon>
                 <IonText>
                   <h3>
